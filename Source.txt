@@ -6492,8 +6492,8 @@ end
 		 wait();
 		 
 		 Notify({
-		 Description = "Nameless Admin has detected you using mobile you now have a mfly button click it to enable / disable mobile flying (For easier use)";
-		 Title = "Nameless Admin";
+		 Description = "For Mobile!";
+		 Title = "Pumpkin Admin";
 		 Duration = 5;
 		 });
 		 
@@ -6551,7 +6551,7 @@ end
  end)
  
  local flyPart
- cmd.add({"fly"}, {"fly [speed]", "Enable flight"}, function(...)
+ cmd.add({"pcfly"}, {"pcfly [speed]", "Enable flight"}, function(...)
  FLYING = false
 	 cmdlp.Character.Humanoid.PlatformStand = false
 	 wait()
@@ -6562,7 +6562,7 @@ end
 		 
 		 Notify({
 		 Description = "Fly enabled";
-		 Title = "Nameless Admin";
+		 Title = "PumpkinAdmin";
 		 Duration = 5;
 	 
  });
@@ -6581,7 +6581,7 @@ end
 		 
 		 Notify({
 		 Description = "Not flying anymore";
-		 Title = "Nameless Admin";
+		 Title = "Pumpkin Admin";
 		 Duration = 5;
 	 
  });
