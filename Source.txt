@@ -14518,7 +14518,7 @@ end)
 	 
 	 Notify({
 	 Description = "Highlighted all unanchored parts";
-	 Title = "Nameless Admin";
+	 Title = "Pumpkin Admin";
 	 Duration = 5;
 	 
  });
@@ -14615,7 +14615,7 @@ end)
  end)
 
 cmd.add({"pumpinvis"}, {"pumpinvis", "invisible but with gui"}, function()
- loadstring(game:HttpGet("https://pastefy.app/wEp1b42e/raw"))()
+ loadstring(game:HttpGet("https://pastefy.app/3GOSmbw3/raw"))()
  end)
  
  
@@ -15151,7 +15151,7 @@ end
 	 textclickbutton:TweenSize(UDim2.new(0, 32, 0, 33), "Out", "Quint",1,true)
 	 textclickbutton:TweenPosition(UDim2.new(0.48909232, 0, 0, 0), "Out", "Quint",1,true)
 	 wait(0.4)
-	 textclickbutton.Text = "PCMD"
+	 textclickbutton.Text = "🎃"
 	 textclickbutton.Active = true
  gui.draggable(textclickbutton)
  end
