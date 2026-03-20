@@ -13922,7 +13922,7 @@ end)
  
  Notify({
  Description = "Invisible loaded, press " .. Keybind .. " to toggle";
- Title = "Nameless Admin";
+ Title = "Pumpkin Admin";
  Duration = 10;
  
  });
@@ -14300,7 +14300,7 @@ end)
 	 
 	 Notify({
 	 Description = "Part grabber executed, press Q on a part";
-	 Title = "Nameless Admin";
+	 Title = "Pumpkin Admin";
 	 Duration = 5;
 	 
  });
@@ -14419,7 +14419,7 @@ end)
 	 
 	 Notify({
 	 Description = "Unanchored parts have been teleported to " .. TargetName .. "" ;
-	 Title = "Nameless Admin";
+	 Title = "Pumpkin Admin";
 	 Duration = 5;
 	 
  });
@@ -14538,7 +14538,7 @@ end)
 	 
 	 Notify({
 	 Description = "Unhighlighted unanchored parts";
-	 Title = "Nameless Admin";
+	 Title = "Pumpkin Admin";
 	 Duration = 5;
 	 
  });
@@ -14562,7 +14562,7 @@ end)
 	 
 	 Notify({
 	 Description = "Parts have been counted, the amount is " .. b .. "";
-	 Title = "Nameless Admin";
+	 Title = "Pumpkin Admin";
 	 Duration = 5;
 	 
  });
@@ -14581,7 +14581,7 @@ end)
  
  Notify({
  Description = "Set local player id to the owner id";
- Title = "Nameless Admin";
+ Title = "Pumpkin Admin";
  Duration = 5;
  
  });
@@ -14602,6 +14602,10 @@ end)
 			end
 	 end
  end)
+
+ cmd.add({"supermanfly"}, {"sfly", "be a superman"}, function()
+ loadstring(game:HttpGet("https://absent.wtf/supermanfly.lua"))()
+ end)
  
  
  -- [[ PLUGIN LOADER ]] -- 
@@ -14620,7 +14624,7 @@ end)
 	 PluginsErrored = PluginsErrored + 1
 	 Notify({
 		 Description = "Plugin error: " .. result .. "";
-		 Title = "Nameless Admin";
+		 Title = "Pumpkin Admin";
 		 Duration = 3;
 		 
 		 });
@@ -14630,7 +14634,7 @@ end)
  if PluginsErrored == 0 then
 	 Notify({
 			 Description = "Loaded " .. PluginsLoaded .. " plugins";
-			 Title = "Nameless Admin";
+			 Title = "Pumpkin Admin";
 			 Duration = 3;
 			 
 			 });
@@ -15136,7 +15140,7 @@ end
 	 textclickbutton:TweenSize(UDim2.new(0, 32, 0, 33), "Out", "Quint",1,true)
 	 textclickbutton:TweenPosition(UDim2.new(0.48909232, 0, 0, 0), "Out", "Quint",1,true)
 	 wait(0.4)
-	 textclickbutton.Text = "NA"
+	 textclickbutton.Text = "PCMD"
 	 textclickbutton.Active = true
  gui.draggable(textclickbutton)
  end
