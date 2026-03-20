@@ -6573,7 +6573,7 @@ end
 		 end
  end)
  
- cmd.add({"unfly"}, {"unfly", "Disable flight"}, function()
+ cmd.add({"unpcfly"}, {"pcunfly", "Disable flight"}, function()
  
 		 
 		 
