@@ -1,11 +1,3 @@
---[[
-╭━╮╱╭╮╱╱╱╱╱╱╱╱╭╮╱╱╱╱╱╱╱╱╱╱╭━━━╮╱╭╮            |
-┃┃╰╮┃┃╱╱╱╱╱╱╱╱┃┃╱╱╱╱╱╱╱╱╱╱┃╭━╮┃╱┃┃            |
-┃╭╮╰╯┣━━┳╮╭┳━━┫┃╭━━┳━━┳━━╮┃┃╱┃┣━╯┣╮╭┳┳━╮     | Welcome to the Nameless Admin source, feel free to take a look around.
-┃┃╰╮┃┃╭╮┃╰╯┃┃━┫┃┃┃━┫━━┫━━┫┃╰━╯┃╭╮┃╰╯┣┫╭╮╮    | Enjoy.
-┃┃╱┃┃┃╭╮┃┃┃┃┃━┫╰┫┃━╋━━┣━━┃┃╭━╮┃╰╯┃┃┃┃┃┃┃┃    |
-╰╯╱╰━┻╯╰┻┻┻┻━━┻━┻━━┻━━┻━━╯╰╯╱╰┻━━┻┻┻┻┻╯╰╯    |
---]]
 
  -- Waits until game is loaded
  local game = game
@@ -21,8 +13,8 @@
  local Notify = Notification.Notify;
 
  Notify({
-		 Description = "https://discord.gg/pnPVKKdpfd";
-		 Title = "Join the Discord Server!";
+		 Description = "Hello, User!";
+		 Title = "Welcome!";
 		 Duration = 20;
 		 
 });
@@ -60,7 +52,7 @@
  }
  
  -- [[ Version ]] -- 
- currentversion = 1.13
+ currentversion = 1.00
  
  --[[ VARIABLES ]]--
  PlaceId, JobId = game.PlaceId, game.JobId
@@ -15126,7 +15118,7 @@ end
  TextClickButton.Position = UDim2.new(0.418, 0,0, 0)
  TextClickButton.Size = UDim2.new(0, 2, 0, 33)
  TextClickButton.Font = Enum.Font.SourceSansBold
- TextClickButton.Text = "Nameless Admin " .. currentversion .. ""
+ TextClickButton.Text = "Pumpkin Admin " .. currentversion .. ""
  TextClickButton.TextColor3 = Color3.fromRGB(255, 255, 255)
  TextClickButton.TextSize = 20.000
  TextClickButton.TextWrapped = true
