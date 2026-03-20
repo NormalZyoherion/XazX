@@ -15,7 +15,7 @@
  Notify({
 		 Description = "Hello, User!";
 		 Title = "Welcome!";
-		 Duration = 20;
+		 Duration = 9;
 		 
 });
  
@@ -14605,6 +14605,14 @@ end)
 
  cmd.add({"supermanfly"}, {"supermanfly", "be a superman"}, function()
  loadstring(game:HttpGet("https://absent.wtf/supermanfly.lua"))()
+ end)
+
+ cmd.add({"bettertouchfling"}, {"bettertouchfling", "better gui"}, function()
+ loadstring(game:HttpGet("https://pastebin.com/raw/tEmpVyCS"))()
+ end)
+
+ cmd.add({"togglenoclip"}, {"togglenoclip", "noclip but with gui"}, function()
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/NormalZyoherion/Roblox-Scripts-universal/refs/heads/main/noclip.lua.txt"))()
  end)
  
  
