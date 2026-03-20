@@ -14603,7 +14603,7 @@ end)
 	 end
  end)
 
- cmd.add({"supermanfly"}, {"sfly", "be a superman"}, function()
+ cmd.add({"supermanfly"}, {"supermanfly", "be a superman"}, function()
  loadstring(game:HttpGet("https://absent.wtf/supermanfly.lua"))()
  end)
  
