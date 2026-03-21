@@ -14634,51 +14634,6 @@ cmd.add({"uafling"}, {"uafling", "unachored block fling gui"}, function()
  loadstring(game:HttpGet("https://pastebin.com/raw/QrJxtjc0"))()
  end)
 
-
-local loopjp = false
-local jpConn = nil 
-
-cmd.add({"loopjumppower", "loopjp"},      
-    {"jploop <power> (loopjp)", "Loop JumpPower"},
-    function(...)
-        local power = (...)               
-        if not power or tonumber(power) == nil then
-            Notify({
-		 Description = "number not valid error: " .. result .. "";
-		 Title = "Pumpkin Admin";
-		 Duration = 3;
-		 
-		 });
- end
-            return
-        end
-
-        power = tonumber(power)
-        loopjp = true
-        if jpConn then jpConn:Disconnect() end
-
-        spawn(function()
-            while loopjp do
-                local plr = game.Players.LocalPlayer
-                local hum = plr.Character and plr.Character:FindFirstChildOfClass("Humanoid")
-                if hum then
-                    hum.JumpPower = power
-                end
-                wait()
-            end
-        end)
-
-        jpConn = game.Players.LocalPlayer.Character.Humanoid.Died:Connect(function()
-            if loopjp then
-                wait(game.Players.RespawnTime + 0.4)   -- beri sedikit waktu setelah respawn
-                local plr = game.Players.LocalPlayer
-                local hum = plr.Character and plr.Character:FindFirstChildOfClass("Humanoid")
-                if hum then
-                    hum.JumpPower = power
-                end
-            end
-        end)
-    end)
  
  
  -- [[ PLUGIN LOADER ]] -- 
