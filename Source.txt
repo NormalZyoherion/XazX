@@ -5510,7 +5510,7 @@ end
  
  Notify({
  Description = "Netless has been activated, re-run this script if you die";
- Title = "Nameless Admin";
+ Title = "Pumpkin Admin";
  Duration = 5;
  
  });
@@ -5524,7 +5524,7 @@ end
  
  Notify({
  Description = "Get ready to launch...";
- Title = "Nameless Admin";
+ Title = "Pumpkin Admin";
  Duration = 5;
  
  });
@@ -5683,7 +5683,7 @@ end
  
  Notify({
  Description = "Kidnapping... next time take a van, or not";
- Title = "Nameless Admin";
+ Title = "Pumpkin Admin";
  Duration = 5;
  
  });
@@ -5890,7 +5890,7 @@ end
 	 else
 		 Notify({
 			 Description = "No player found";
-			 Title = "Nameless Admin";
+			 Title = "Pumpkin Admin";
 			 Duration = 15;
 			 
 			 });
@@ -5906,7 +5906,7 @@ end
 				 ChatMessage("/w "..Player.Name.." You can no longer use commands")
 					 Notify({
 				 Description = "" .. Player.Name .. " is no longer an admin";
-				 Title = "Nameless Admin";
+				 Title = "Pumpkin Admin";
 				 Duration = 15;
 				 
 				 });
@@ -5989,7 +5989,7 @@ end
 			end)
  Notify({
  Description = "Anti kick executed";
- Title = "Nameless Admin";
+ Title = "Pumpkin Admin";
  Duration = 5;
  
  });
@@ -6008,7 +6008,7 @@ end
  
  Notify({
  Description = "Copied your jobid (" .. jobId .. ")";
- Title = "Nameless Admin";
+ Title = "Pumpkin Admin";
  Duration = 5;
  
  });
@@ -6040,7 +6040,7 @@ end
 				 if #SomeSRVS > 0 then
 				 Notify({
  Description = "Searched, please wait while we are teleporting you";
- Title = "Nameless Admin";
+ Title = "Pumpkin Admin";
  Duration = 5;
  
  });
