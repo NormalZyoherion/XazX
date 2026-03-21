@@ -14634,53 +14634,52 @@ cmd.add({"uafling"}, {"uafling", "unachored block fling gui"}, function()
  loadstring(game:HttpGet("https://pastebin.com/raw/QrJxtjc0"))()
  end)
 
+_na_env.NamelessJP = nil
+NAStuff.loopjp = false
 
-local loopjp = false
-local jpConn = nil 
+cmd.add({"loopjumppower", "loopjp", "ljp"}, {"loopjumppower <number> (loopjp,ljp)", "Loop JumpPower"}, function(...)
+	local val = tonumber(...) or 50
+	_na_env.NamelessJP = val
+	NAStuff.loopjp = true
 
-cmd.add({"loopjumppower", "loopjp"},      
-    {"jploop <power> (loopjp)", "Loop JumpPower"},
-    function(...)
-        local power = (...)               
-        if not power or tonumber(power) == nil then
-            Notify({
-		 Description = "number not valid error: " .. result .. "";
-		 Title = "Pumpkin Admin";
-		 Duration = 3;
-		 
-		 });
- end
-            return
-        end
+	NAlib.disconnect("loopjp_apply")
+	NAlib.disconnect("loopjp_char")
 
-        power = tonumber(power)
-        loopjp = true
-        if jpConn then jpConn:Disconnect() end
+	local function applyJP()
+		local hum = getHum()
+		if not hum then return end
 
-        spawn(function()
-            while loopjp do
-                local plr = game.Players.LocalPlayer
-                local hum = plr.Character and plr.Character:FindFirstChildOfClass("Humanoid")
-                if hum then
-                    hum.JumpPower = power
-                end
-                wait()
-            end
-        end)
+		if hum.UseJumpPower then
+			hum.JumpPower = val
+			NAlib.connect("loopjp_apply", hum:GetPropertyChangedSignal("JumpPower"):Connect(function()
+				if NAStuff.loopjp and hum.JumpPower ~= val then
+					hum.JumpPower = val
+				end
+			end))
+		else
+			hum.JumpHeight = val
+			NAlib.connect("loopjp_apply", hum:GetPropertyChangedSignal("JumpHeight"):Connect(function()
+				if NAStuff.loopjp and hum.JumpHeight ~= val then
+					hum.JumpHeight = val
+				end
+			end))
+		end
+	end
 
-        jpConn = game.Players.LocalPlayer.Character.Humanoid.Died:Connect(function()
-            if loopjp then
-                wait(game.Players.RespawnTime + 0.4)   -- beri sedikit waktu setelah respawn
-                local plr = game.Players.LocalPlayer
-                local hum = plr.Character and plr.Character:FindFirstChildOfClass("Humanoid")
-                if hum then
-                    hum.JumpPower = power
-                end
-            end
-        end)
-    end)
- 
- 
+	applyJP()
+
+	NAlib.connect("loopjp_char", LocalPlayer.CharacterAdded:Connect(function()
+		while not getHum() do Wait(.1) end
+		if NAStuff.loopjp then applyJP() end
+	end))
+end, true)
+
+cmd.add({"unloopjumppower", "unloopjp", "unljp"}, {"unloopjumppower (unloopjp,unljp)", "Disable loop jump power"}, function()
+	NAStuff.loopjp = false
+	NAlib.disconnect("loopjp_apply")
+	NAlib.disconnect("loopjp_char")
+end)
+
  -- [[ PLUGIN LOADER ]] -- 
  local PluginsLoaded = 0
  PluginsErrored = 0
