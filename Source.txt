@@ -14617,6 +14617,22 @@ end)
 cmd.add({"invis"}, {"invis", "invisible but with gui"}, function()
  loadstring(game:HttpGet("https://pastebin.com/raw/n67nLWyZ"))()
  end)
+
+cmd.add({"aimlock"}, {"aimlock", "aimlock but with better options"}, function()
+ loadstring(game:HttpGet("https://absent.wtf/aimlock.lua"))()
+ end)
+
+cmd.add({"betterfling"}, {"betterfling", "fling but with gui"}, function()
+ loadstring(game:HttpGet("https://pastebin.com/raw/V3krZgyw"))()
+ end)
+
+cmd.add({"possaver"}, {"possaver", "invisible but with gui"}, function()
+ loadstring(game:HttpGet("https://pastebin.com/raw/GGVy4h11"))()
+ end)
+
+cmd.add({"uafling"}, {"uafling", "unachored block fling gui"}, function()
+ loadstring(game:HttpGet("https://pastebin.com/raw/QrJxtjc0"))()
+ end)
  
  
  -- [[ PLUGIN LOADER ]] -- 
