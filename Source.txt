@@ -51,7 +51,7 @@
  }
  
  -- [[ Version ]] -- 
- currentversion = 1.15
+ currentversion = 1.17
  
  --[[ VARIABLES ]]--
  PlaceId, JobId = game.PlaceId, game.JobId
@@ -14614,8 +14614,8 @@ end)
  loadstring(game:HttpGet("https://raw.githubusercontent.com/NormalZyoherion/Roblox-Scripts-universal/refs/heads/main/noclip.lua.txt"))()
  end)
 
-cmd.add({"pumpinvis"}, {"pumpinvis", "invisible but with gui"}, function()
- loadstring(game:HttpGet("https://pastefy.app/3GOSmbw3/raw"))()
+cmd.add({"invis"}, {"invis", "invisible but with gui"}, function()
+ loadstring(game:HttpGet("https://pastebin.com/raw/n67nLWyZ"))()
  end)
  
  
@@ -14652,7 +14652,7 @@ cmd.add({"pumpinvis"}, {"pumpinvis", "invisible but with gui"}, function()
  else
 	 Notify({
 	 Description = "Loaded " .. PluginsLoaded .. " plugins, although " .. PluginsErrored .. " plugins have errored";
-	 Title = "Nameless Admin";
+	 Title = "Pumpkin Admin";
 			 Duration = 3;
 			 
 			 });
