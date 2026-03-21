@@ -14634,29 +14634,51 @@ cmd.add({"uafling"}, {"uafling", "unachored block fling gui"}, function()
  loadstring(game:HttpGet("https://pastebin.com/raw/QrJxtjc0"))()
  end)
 
-cmd.add({"loopjumppower"}, {"loopjumppower", "make your jumppower high (loop)"}, function()
-	local jpower = args[1] or 50
-	if isNumber(jpower) then
-		local Char = speaker.Character or workspace:FindFirstChild(speaker.Name)
-		local Human = Char and Char:FindFirstChildWhichIsA("Humanoid")
-		local function JumpPowerChange()
-			if Char and Human then
-				if speaker.Character:FindFirstChildOfClass('Humanoid').UseJumpPower then
-					speaker.Character:FindFirstChildOfClass('Humanoid').JumpPower = jpower
-				else
-					speaker.Character:FindFirstChildOfClass('Humanoid').JumpHeight  = jpower
-				end
-			end
-		end
-		JumpPowerChange()
-		HumanModCons.jpLoop = (HumanModCons.jpLoop and HumanModCons.jpLoop:Disconnect() and false) or Human:GetPropertyChangedSignal("JumpPower"):Connect(JumpPowerChange)
-		HumanModCons.jpCA = (HumanModCons.jpCA and HumanModCons.jpCA:Disconnect() and false) or speaker.CharacterAdded:Connect(function(nChar)
-			Char, Human = nChar, nChar:WaitForChild("Humanoid")
-			JumpPowerChange()
-			HumanModCons.jpLoop = (HumanModCons.jpLoop and HumanModCons.jpLoop:Disconnect() and false) or Human:GetPropertyChangedSignal("JumpPower"):Connect(JumpPowerChange)
-		end)
-	end
-end)
+
+local loopjp = false
+local jpConn = nil 
+
+cmd.add({"loopjumppower", "loopjp"},      
+    {"jploop <power> (loopjp)", "Loop JumpPower"},
+    function(...)
+        local power = (...)               
+        if not power or tonumber(power) == nil then
+            Notify({
+		 Description = "number not valid error: " .. result .. "";
+		 Title = "Pumpkin Admin";
+		 Duration = 3;
+		 
+		 });
+ end
+            return
+        end
+
+        power = tonumber(power)
+        loopjp = true
+        if jpConn then jpConn:Disconnect() end
+
+        spawn(function()
+            while loopjp do
+                local plr = game.Players.LocalPlayer
+                local hum = plr.Character and plr.Character:FindFirstChildOfClass("Humanoid")
+                if hum then
+                    hum.JumpPower = power
+                end
+                wait()
+            end
+        end)
+
+        jpConn = game.Players.LocalPlayer.Character.Humanoid.Died:Connect(function()
+            if loopjp then
+                wait(game.Players.RespawnTime + 0.4)   -- beri sedikit waktu setelah respawn
+                local plr = game.Players.LocalPlayer
+                local hum = plr.Character and plr.Character:FindFirstChildOfClass("Humanoid")
+                if hum then
+                    hum.JumpPower = power
+                end
+            end
+        end)
+    end)
  
  
  -- [[ PLUGIN LOADER ]] -- 
