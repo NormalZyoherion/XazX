@@ -14627,7 +14627,7 @@ cmd.add({"noclipgui"}, {"noclipgui", "opens noclip gui for user"}, function()
 	 loadstring(game:HttpGet('https://pastefy.app/SDbhbpLo/raw'))()
  end)
 
-cmd.add({"invisiblegui"}, {"invisiblegui", "opens movement gui for user"}, function()
+cmd.add({"invisiblegui"}, {"invisiblegui", "opens invisible gui for user"}, function()
 
 loadstring(game:HttpGet('https://pastefy.app/JpftjjnX/raw''))()
  end)
