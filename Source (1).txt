@@ -14611,16 +14611,25 @@ end)
 	 end
  end)
 
-cmd.add({"fly2"}, {"777fly", "cframe fly almost bypasses all anticheat"}, function()
+cmd.add({"fly2"}, {"fly2", "cframe fly almost bypasses all anticheat"}, function()
 	 loadstring(game:HttpGet('https://github.com/NormalZyoherion/NeverTag.lol/blob/main/fly.%20txt.txt?raw=true'))()
  end)
 
-cmd.add({"reachgui"}, {"777reach", "opens reach gui almost works all game"}, function()
+cmd.add({"reachgui"}, {"reachgui", "opens reach gui almost works all game"}, function()
 	 loadstring(game:HttpGet('https://github.com/NormalZyoherion/NeverTag.lol/blob/main/reach.txt?raw=true'))()
  end)
 
-cmd.add({"movement"}, {"playergui", "opens movement gui for user"}, function()
-	 loadstring(game:HttpGet('https://pastefy.app/mFnSS5FH/raw'))()
+cmd.add({"movement"}, {"movement", "opens movement gui for user"}, function()
+	 loadstring(game:HttpGet('https://pastefy.app/Bd8C7cUq/raw'))()
+ end)
+
+cmd.add({"noclipgui"}, {"noclipgui", "opens noclip gui for user"}, function()
+	 loadstring(game:HttpGet('https://pastefy.app/SDbhbpLo/raw'))()
+ end)
+
+cmd.add({"invisiblegui"}, {"invisiblegui", "opens movement gui for user"}, function()
+
+loadstring(game:HttpGet('https://pastefy.app/JpftjjnX/raw''))()
  end)
  
  
