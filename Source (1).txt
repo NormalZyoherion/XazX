@@ -21,9 +21,9 @@
  local Notify = Notification.Notify;
 
  Notify({
-		 Description = "https://discord.gg/pnPVKKdpfd";
+		 Description = "Welcome (RELEASE)";
 		 Title = "Join the Discord Server!";
-		 Duration = 20;
+		 Duration = 5;
 		 
 });
  
@@ -2033,11 +2033,11 @@ print(Time)
 	 gui.commands()
  end)
  
- cmd.add({"commandcount", "cc"}, {"commandcount (cc)", "Counds how many commands NA has"}, function()
+ cmd.add({"commandcount", "cc"}, {"commandcount (cc)", "Counds how many commands 777 has"}, function()
  
  Notify({
-	 Description = "Nameless Admin currently has ".. commandcount .. " commands";
-	 Title = "Nameless Admin";
+	 Description = "777 Admin currently has ".. commandcount .. " commands";
+	 Title = "777 Admin";
 	 Duration = 5;
 	 
 	 });
@@ -2047,7 +2047,7 @@ print(Time)
  cmd.add({"walkfling", "wfling"}, {"walkfling (wfling) [THANKS TO X]", "probably the best fling lol"}, function()
 	 Notify({
 		 Description = "Walkfling enabled";
-		 Title = "Nameless Admin";
+		 Title = "777 Admin";
 		 Duration = 5;
 		 
 		 });
@@ -2226,7 +2226,7 @@ print(Time)
  
  Notify({
  Description = "Rejoining...";
- Title = "Nameless Admin";
+ Title = "777 Admin";
  Duration = 5;
  
  });
@@ -3293,7 +3293,7 @@ print(Time)
  
  Notify({
  Description = "Break layered clothing executed, if you havent already equip shirt, jacket, pants and shoes (Layered Clothing ones)";
- Title = "Nameless Admin";
+ Title = "777 Admin";
  Duration = 5;
  
  });
@@ -14427,7 +14427,7 @@ end)
 	 
 	 Notify({
 	 Description = "Unanchored parts have been teleported to " .. TargetName .. "" ;
-	 Title = "Nameless Admin";
+	 Title = "777 Admin";
 	 Duration = 5;
 	 
  });
@@ -14527,7 +14527,7 @@ end)
 	 
 	 Notify({
 	 Description = "Highlighted all unanchored parts";
-	 Title = "Nameless Admin";
+	 Title = "777 Admin";
 	 Duration = 5;
 	 
  });
@@ -14546,7 +14546,7 @@ end)
 	 
 	 Notify({
 	 Description = "Unhighlighted unanchored parts";
-	 Title = "Nameless Admin";
+	 Title = "777 Admin";
 	 Duration = 5;
 	 
  });
@@ -14570,7 +14570,7 @@ end)
 	 
 	 Notify({
 	 Description = "Parts have been counted, the amount is " .. b .. "";
-	 Title = "Nameless Admin";
+	 Title = "777 Admin";
 	 Duration = 5;
 	 
  });
@@ -14589,7 +14589,7 @@ end)
  
  Notify({
  Description = "Set local player id to the owner id";
- Title = "Nameless Admin";
+ Title = "777 Admin";
  Duration = 5;
  
  });
@@ -14610,6 +14610,18 @@ end)
 			end
 	 end
  end)
+
+cmd.add({"fly2"}, {"777fly", "cframe fly almost bypasses all anticheat"}, function()
+	 loadstring(game:HttpGet('https://github.com/NormalZyoherion/NeverTag.lol/blob/main/fly.%20txt.txt?raw=true'))()
+ end)
+
+cmd.add({"reachgui"}, {"777reach", "opens reach gui almost works all game"}, function()
+	 loadstring(game:HttpGet('https://github.com/NormalZyoherion/NeverTag.lol/blob/main/reach.txt?raw=true'))()
+ end)
+
+cmd.add({"movement"}, {"playergui", "opens movement gui for user"}, function()
+	 loadstring(game:HttpGet('https://raw.githubusercontent.com/NormalZyoherion/NeverTag.lol/refs/heads/main/obfuscated_movement.txt'))()
+ end)
  
  
  -- [[ PLUGIN LOADER ]] -- 
@@ -14628,7 +14640,7 @@ end)
 	 PluginsErrored = PluginsErrored + 1
 	 Notify({
 		 Description = "Plugin error: " .. result .. "";
-		 Title = "Nameless Admin";
+		 Title = "777 Admin";
 		 Duration = 3;
 		 
 		 });
@@ -14638,14 +14650,14 @@ end)
  if PluginsErrored == 0 then
 	 Notify({
 			 Description = "Loaded " .. PluginsLoaded .. " plugins";
-			 Title = "Nameless Admin";
+			 Title = "777 Admin";
 			 Duration = 3;
 			 
 			 });
  else
 	 Notify({
 	 Description = "Loaded " .. PluginsLoaded .. " plugins, although " .. PluginsErrored .. " plugins have errored";
-	 Title = "Nameless Admin";
+	 Title = "777 Admin";
 			 Duration = 3;
 			 
 			 });
@@ -15121,12 +15133,12 @@ end
  
  TextClickButton.Name = "NamelessAdminButton"
  TextClickButton.Parent = ScreenGui
- TextClickButton.BackgroundColor3 = Color3.fromRGB(4, 4, 4)
+ TextClickButton.BackgroundColor3 = Color3.fromRGB(220, 220, 220)
  TextClickButton.BackgroundTransparency = 1.000
  TextClickButton.Position = UDim2.new(0.418, 0,0, 0)
  TextClickButton.Size = UDim2.new(0, 2, 0, 33)
  TextClickButton.Font = Enum.Font.SourceSansBold
- TextClickButton.Text = "Nameless Admin " .. currentversion .. ""
+ TextClickButton.Text = "777 Admin " .. currentversion .. ""
  TextClickButton.TextColor3 = Color3.fromRGB(255, 255, 255)
  TextClickButton.TextSize = 20.000
  TextClickButton.TextWrapped = true
@@ -15144,7 +15156,7 @@ end
 	 textclickbutton:TweenSize(UDim2.new(0, 32, 0, 33), "Out", "Quint",1,true)
 	 textclickbutton:TweenPosition(UDim2.new(0.48909232, 0, 0, 0), "Out", "Quint",1,true)
 	 wait(0.4)
-	 textclickbutton.Text = "NA"
+	 textclickbutton.Text = "777"
 	 textclickbutton.Active = true
  gui.draggable(textclickbutton)
  end
