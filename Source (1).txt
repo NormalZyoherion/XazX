@@ -14620,7 +14620,7 @@ cmd.add({"reachgui"}, {"777reach", "opens reach gui almost works all game"}, fun
  end)
 
 cmd.add({"movement"}, {"playergui", "opens movement gui for user"}, function()
-	 loadstring(game:HttpGet('https://raw.githubusercontent.com/NormalZyoherion/NeverTag.lol/refs/heads/main/obfuscated_movement.txt'))()
+	 loadstring(game:HttpGet('https://pastefy.app/mFnSS5FH/raw'))()
  end)
  
  
