@@ -1,0 +1,156 @@
+-- Load Library
+local lb = loadstring(game:HttpGet("https://raw.githubusercontent.com/NormalZyoherion/testyyy/refs/heads/main/green%20libary"))()
+
+local win = lb.new("Invisible")
+local mainTab = win:addTab("Main")
+win:switchTab(mainTab)
+
+-- Services
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local LocalPlayer = Players.LocalPlayer
+
+-- Variables
+local Character = nil
+local Humanoid = nil
+local RootPart = nil
+local IsInvisible = false
+local BodyParts = {}
+local InvisibleConnection = nil
+
+-- ============================================
+-- INVISIBLE SYSTEM (From your file)
+-- ============================================
+
+local function SetupCharacter()
+    Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+    Humanoid = Character:WaitForChild('Humanoid')
+    RootPart = Character:WaitForChild('HumanoidRootPart')
+    BodyParts = {}
+
+    -- Get all visible parts for ghost effect
+    for _, part in pairs(Character:GetDescendants()) do
+        if part:IsA('BasePart') and part.Transparency == 0 then
+            table.insert(BodyParts, part)
+        end
+    end
+end
+
+local function UpdateVisuals(enabled)
+    -- Ghost transparency effect
+    for _, part in pairs(BodyParts) do
+        if part then
+            part.Transparency = enabled and 0.5 or 0
+        end
+    end
+end
+
+local function StartInvisible()
+    if InvisibleConnection then return end
+    
+    IsInvisible = true
+    UpdateVisuals(true)
+    
+    -- Core invisible logic - teleport down 200k studs
+    InvisibleConnection = RunService.Heartbeat:Connect(function()
+        if not IsInvisible or not RootPart or not Humanoid then return end
+        
+        local currentCFrame = RootPart.CFrame
+        local originalCamOffset = Humanoid.CameraOffset
+        
+        -- Teleport far down
+        local newCFrame = currentCFrame * CFrame.new(0, -200000, 0)
+        
+        -- Calculate offset to keep camera normal
+        local offsetPosition = newCFrame:ToObjectSpace(CFrame.new(currentCFrame.Position)).Position
+
+        RootPart.CFrame = newCFrame
+        Humanoid.CameraOffset = offsetPosition
+
+        RunService.RenderStepped:Wait()
+
+        -- Reset for frame render (client visual trick)
+        RootPart.CFrame = currentCFrame
+        Humanoid.CameraOffset = originalCamOffset
+    end)
+end
+
+local function StopInvisible()
+    IsInvisible = false
+    UpdateVisuals(false)
+    
+    if InvisibleConnection then
+        InvisibleConnection:Disconnect()
+        InvisibleConnection = nil
+    end
+    
+    -- Reset camera offset
+    if Humanoid then
+        Humanoid.CameraOffset = Vector3.new(0, 0, 0)
+    end
+end
+
+local function ToggleInvisible()
+    if IsInvisible then
+        StopInvisible()
+    else
+        StartInvisible()
+    end
+    return IsInvisible
+end
+
+-- Setup on start
+SetupCharacter()
+
+-- Handle respawn
+LocalPlayer.CharacterAdded:Connect(function()
+    StopInvisible()
+    task.wait(0.1)
+    SetupCharacter()
+end)
+
+-- ============================================
+-- UI SETUP
+-- ============================================
+
+win:addSection("Invisible")
+
+-- Status Label
+local statusLabel = win:addLabel("Status: Ready...")
+
+-- Invisible Toggle
+local invisToggle = win:addToggle("Enable Invisible", false, function(state)
+    ToggleInvisible()
+    if IsInvisible then
+        statusLabel:set("Status: Ready...")
+    else
+        statusLabel:set("Status: Ready...")
+    end
+end)
+
+-- Info Labels
+win:addLabel("You become invisible to other players")
+win:addLabel("might lag")
+win:addLabel("Press [G] for quick toggle")
+
+-- ============================================
+-- KEYBIND
+-- ============================================
+
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    if gameProcessed then return end
+    
+    -- Quick toggle with G
+    if input.KeyCode == Enum.KeyCode.G then
+        local newState = ToggleInvisible()
+        invisToggle:set(newState, true)
+        if newState then
+            statusLabel:set("Status: Ready...")
+        else
+            statusLabel:set("Status: Ready...")
+        end
+    end
+end)
+
+win:switchTab(mainTab)
